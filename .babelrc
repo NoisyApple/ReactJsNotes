@@ -6,6 +6,15 @@
       {
         "loose": true
       }
+    ],
+    [
+      "prismjs",
+      {
+        "languages": ["javascript", "jsx", "markup"],
+        "plugins": ["line-numbers"],
+        "theme": "okaidia",
+        "css": true
+      }
     ]
   ]
 }

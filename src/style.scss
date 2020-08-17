@@ -48,24 +48,6 @@ body {
   &:not(:last-child) {
     margin-bottom: 10px;
   }
-  button {
-    margin-right: 10px;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
-    font-weight: bold;
-    width: 150px;
-    outline: 0;
-    cursor: pointer;
-
-    &:hover {
-      background: #ddd;
-    }
-
-    &:active {
-      background: #ccc;
-    }
-  }
 
   p {
     flex: 1;
@@ -73,13 +55,87 @@ body {
   }
 }
 
+.btn {
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  width: 150px;
+  outline: 0;
+  cursor: pointer;
+  background: #eee;
+
+  &:hover {
+    background: #ddd;
+  }
+
+  &:active {
+    background: #ccc;
+  }
+}
+
 .block {
   border-radius: 10px;
   background: #555;
   padding: 10px;
+  font-size: 15px;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  pre {
+    margin-top: 10px !important;
+  }
+}
+
+.block-title {
+  font-family: $title-font;
+  color: $text-color;
+  font-size: 25px;
+  margin: 25px 0 10px 0;
+  font-weight: bold;
 }
 
 .paragraph {
   color: $text-color;
   font-family: $paragraph-font;
+}
+
+// MOBILE DEVICES
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .subtitle {
+    font-size: 30px;
+  }
+
+  .hideable-content {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-top: 10px;
+    }
+  }
+
+  .btn {
+    margin: 0;
+    font-size: 18px;
+    width: 100%;
+  }
 }

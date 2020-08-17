@@ -14,14 +14,18 @@ export default class HideableContent extends Component {
     if (this.state.show)
       return (
         <div className="hideable-content">
-          <button onClick={this.toggleShow}>Ocultar Contenido</button>
+          <button className="btn" onClick={this.toggleShow}>
+            Ocultar Contenido
+          </button>
           <p>{this.state.text}</p>
         </div>
       );
     else
       return (
         <div className="hideable-content">
-          <button onClick={this.toggleShow}>Mostrar Contenido</button>
+          <button className="btn" onClick={this.toggleShow}>
+            Mostrar Contenido
+          </button>
         </div>
       );
   }
