@@ -1,0 +1,85 @@
+$text-color: #fff;
+$react-blue: deepskyblue;
+$title-font: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+$paragraph-font: Calibri, sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #ccc;
+  margin: 0;
+}
+
+.container {
+  background: #333;
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.title {
+  font-family: $title-font;
+  text-align: center;
+  margin: 0;
+  font-size: 100px;
+  color: $react-blue;
+  cursor: pointer;
+}
+
+.subtitle {
+  font-family: $title-font;
+  font-size: 50px;
+  margin: 15px 0 0 0;
+  color: $text-color;
+  padding-bottom: 5px;
+  border-bottom: 3px solid $text-color;
+}
+
+.hideable-content {
+  color: $text-color;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: $paragraph-font;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  button {
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    width: 150px;
+    outline: 0;
+    cursor: pointer;
+
+    &:hover {
+      background: #ddd;
+    }
+
+    &:active {
+      background: #ccc;
+    }
+  }
+
+  p {
+    flex: 1;
+    margin: 0;
+  }
+}
+
+.block {
+  border-radius: 10px;
+  background: #555;
+  padding: 10px;
+}
+
+.paragraph {
+  color: $text-color;
+  font-family: $paragraph-font;
+}
