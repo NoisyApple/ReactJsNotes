@@ -5,6 +5,8 @@ import HideableContent from "./HideableContent";
 import Paragraph from "./Paragraph";
 import CodeBlock from "./CodeBlock";
 import BlockTitle from "./BlockTitle";
+import TextInput from "./TextInput";
+import { Code } from "./CodeText";
 
 export default class App extends Component {
   render() {
@@ -24,7 +26,21 @@ export default class App extends Component {
 
           <BlockTitle text="Codigo:" />
           <div className="block">
-            <CodeBlock />
+            <CodeBlock code={Code[0]} />
+          </div>
+
+          <Subitle text="Text inputs" />
+          <Paragraph text="Al usar elementos que sirven como entradas de texto debemos tratar su valor como parte del estado del componente." />
+
+          <BlockTitle text="Ejemplo:" />
+          <div className="block">
+            <label className="label">Cuadro de texto: </label>
+            <TextInput />
+          </div>
+
+          <BlockTitle text="Codigo:" />
+          <div className="block">
+            <CodeBlock code={Code[1]} />
           </div>
         </div>
       </div>

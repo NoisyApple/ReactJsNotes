@@ -4,31 +4,8 @@ import React, { Component } from "react";
 
 export default class CodeBlock extends Component {
   state = {
-    show: true,
-    text: `export default class HideableContent extends Component {
-  state = {
-    show: true,
-    text: this.props.text,
-  };
-    
-  toggleShow = () => this.setState({ show: !this.state.show });
-    
-  render() {
-    if (this.state.show)
-      return (
-        <div className="hideable-content">
-          <button onClick={this.toggleShow}>Ocultar Contenido</button>
-          <p>{this.state.text}</p>
-        </div>
-      );
-    else
-      return (
-        <div className="hideable-content">
-          <button onClick={this.toggleShow}>Mostrar Contenido</button>
-        </div>
-      );
-  }
-}`,
+    show: false,
+    code: this.props.code,
   };
 
   componentDidUpdate() {
@@ -55,7 +32,7 @@ export default class CodeBlock extends Component {
             Ocultar Codigo
           </button>
           <pre>
-            <code className="language-jsx">{this.state.text}</code>
+            <code className="line-numbers language-jsx">{this.state.code}</code>
           </pre>
         </div>
       );
