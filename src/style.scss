@@ -118,6 +118,32 @@ body {
   outline: none;
 }
 
+.language-switch {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  img {
+    filter: grayscale(1);
+    // animation: filter 0.5s;
+    cursor: pointer;
+    height: 30px;
+
+    &:first-of-type {
+      margin-left: 10px;
+    }
+  }
+
+  p {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $text-color;
+    font-family: $paragraph-font;
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
 // MOBILE DEVICES
 @media only screen and (max-width: 600px) {
   .container {

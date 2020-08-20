@@ -15,4 +15,13 @@ export function rainbowText(text) {
   return DOMelements;
 }
 
-export default { rainbowText };
+export function updateLang(actualLang, langTexts) {
+  let langElements = document.querySelectorAll(".lang");
+
+  langElements.forEach((langElement) => {
+    langElement.textContent =
+      langTexts[langElement.dataset.langName][actualLang];
+  });
+}
+
+export default { rainbowText, updateLang };

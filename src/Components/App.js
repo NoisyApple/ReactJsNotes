@@ -6,41 +6,63 @@ import Paragraph from "./Paragraph";
 import CodeBlock from "./CodeBlock";
 import BlockTitle from "./BlockTitle";
 import TextInput from "./TextInput";
-import { Code } from "./CodeText";
+import { code, lang } from "../Data";
+import LanguageSwitch from "./LanguageSwitch";
+import { updateLang } from "../jsUtils";
 
 export default class App extends Component {
+  state = {
+    lang: "en",
+  };
+
+  languageSwitch = (selectedLang) => {
+    this.setState({ lang: selectedLang });
+  };
+
+  componentDidMount() {
+    updateLang(this.state.lang, lang);
+  }
+
+  componentDidUpdate() {
+    updateLang(this.state.lang, lang);
+  }
+
   render() {
     return (
       <div className="container">
+        <LanguageSwitch
+          lang={this.state.lang}
+          langSwitch={this.languageSwitch}
+        />
         <Title text="React.js Notes" />
         <div className="state-container">
-          <Subitle text="State" />
-          <Paragraph text="Los componentes de react cuentan con un objeto JSON llamado 'state' en el cual quedan almacenados los diferentes estados que puede tener el componente, para modificar algun atributo del objeto state se utiliza el metodo setState" />
+          <Subitle langName="subtitle-state" />
+          <Paragraph langName="paragraph-state" />
 
-          <BlockTitle text="Ejemplo:" />
+          <BlockTitle langName="block-title-example" />
           <div className="block">
             <HideableContent text="CONTENIDO A" />
             <HideableContent text="CONTENIDO B" />
             <HideableContent text="CONTENIDO C" />
           </div>
 
-          <BlockTitle text="Codigo:" />
+          <BlockTitle langName="block-title-code" />
           <div className="block">
-            <CodeBlock code={Code[0]} />
+            <CodeBlock code={code[0]} />
           </div>
 
-          <Subitle text="Text inputs" />
-          <Paragraph text="Al usar elementos que sirven como entradas de texto debemos tratar su valor como parte del estado del componente." />
+          <Subitle langName="subtitle-text-inputs" />
+          <Paragraph langName="paragraph-text-inputs" />
 
-          <BlockTitle text="Ejemplo:" />
+          <BlockTitle langName="block-title-example" />
           <div className="block">
             <label className="label">Cuadro de texto: </label>
             <TextInput />
           </div>
 
-          <BlockTitle text="Codigo:" />
+          <BlockTitle langName="block-title-code" />
           <div className="block">
-            <CodeBlock code={Code[1]} />
+            <CodeBlock code={code[1]} />
           </div>
         </div>
       </div>

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 export default class Paragraph extends Component {
   render() {
-    return <p className="paragraph">{this.props.text}</p>;
+    return (
+      <p className="paragraph lang" data-lang-name={this.props.langName}></p>
+    );
   }
 }
